@@ -4,6 +4,7 @@ node_modules/
 # Environment variables
 .env
 .env.*
+!.env.example
 
 # Build output
 dist/
@@ -11,9 +12,18 @@ build/
 
 # Test coverage
 coverage/
+test-results/
+playwright-report/
+.nyc_output/
+
+# Local verification artifacts
+phase*-check.cjs
+*.tmp
+*.bak
 
 # IDE settings
 .vscode/
+.idea/
 
 # OS files
 .DS_Store
