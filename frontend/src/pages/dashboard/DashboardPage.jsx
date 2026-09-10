@@ -137,7 +137,7 @@ export default function DashboardPage() {
   )
 
   return (
-    <div ref={dashboard}>
+    <div ref={dashboard} className="dashboard-content">
       <PageHeading
         title="Dashboard"
         description="Overview of employee information and activity."

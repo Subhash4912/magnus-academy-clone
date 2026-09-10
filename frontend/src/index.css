@@ -27,6 +27,27 @@
     linear-gradient(180deg, #f8faff 0%, var(--workspace-canvas) 100%);
 }
 
+/* Paint the full dashboard canvas, including its padding and footer.
+   Gradual radial stops give a blurred glow without filters or oversized layers. */
+html:not(.dark) .workspace-main:has(.dashboard-content) {
+  position: relative;
+  isolation: isolate;
+  background: linear-gradient(135deg, #fdfdff 0%, #f8f7fd 48%, #f3f8fe 100%);
+}
+
+html:not(.dark) .workspace-main:has(.dashboard-content)::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: inherit;
+  background:
+    radial-gradient(ellipse min(40rem, 85vw) 30rem at 6% 8%, rgb(167 139 250 / 12%), transparent 75%),
+    radial-gradient(ellipse min(44rem, 90vw) 34rem at 100% 35%, rgb(125 176 245 / 11%), transparent 75%),
+    radial-gradient(ellipse min(36rem, 80vw) 28rem at 30% 100%, rgb(196 181 253 / 10%), transparent 75%);
+}
+
 .login-page {
   background:
     radial-gradient(circle at 9% 12%, rgb(129 140 248 / 24%), transparent 25rem),
